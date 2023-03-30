@@ -4,7 +4,14 @@ import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/tr
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp(),
+    presetWeapp({
+      transform: true,
+      platform: 'uniapp',
+      designWidth: 750,
+      deviceRatio: { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2},
+      isH5: false,
+      whRpx: true,
+    }),
   ],
   shortcuts: [
     {
