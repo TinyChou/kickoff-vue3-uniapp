@@ -1,16 +1,113 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/comp-index/comp-index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index",
+      "style": {
+        "navigationBarTitleText": "uniapp-vue3"
+      }
+    },
+    {
+      "path": "pages/font/index",
+      "style": {
+        "navigationBarTitleText": "font"
+      }
+    },
+    {
+      "path": "pages/size",
+      "style": {
+        "navigationBarTitleText": "size"
+      }
+    },
+    {
+      "path": "pages/shadow",
+      "style": {
+        "navigationBarTitleText": "shadow"
+      }
+    },
+    {
+      "path": "pages/border/index",
+      "style": {
+        "navigationBarTitleText": "border"
+      }
+    },
+    {
+      "path": "pages/spacing",
+      "style": {
+        "navigationBarTitleText": "spacing"
+      }
+    },
+    {
+      "path": "pages/shortcuts",
+      "style": {
+        "navigationBarTitleText": "shortcuts"
+      }
+    },
+    {
+      "path": "pages/class",
+      "style": {
+        "navigationBarTitleText": ":class"
+      }
+    },
+    {
+      "path": "pages/color",
+      "style": {
+        "navigationBarTitleText": "color"
+      }
+    },
+    {
+      "path": "pages/attributify-mode",
+      "style": {
+        "navigationBarTitleText": "attributify-mode"
+      }
+    },
+    {
+      "path": "pages/animation",
+      "style": {
+        "navigationBarTitleText": "animation"
+      }
+    },
+    {
+      "path": "pages/bg",
+      "style": {
+        "navigationBarTitleText": "bg"
+      }
+    },
+    {
+      "path": "pages/odd-even",
+      "style": {
+        "navigationBarTitleText": "odd-even"
+      }
+    },
+    {
+      "path": "pages/first-last",
+      "style": {
+        "navigationBarTitleText": "first-last"
+      }
+    },
+    {
+      "path": "pages/divide",
+      "style": {
+        "navigationBarTitleText": "divide"
+      }
+    },
+    {
+      "path": "pages/space",
+      "style": {
+        "navigationBarTitleText": "space"
+      }
+    },
+    {
+      "path": "pages/apply",
+      "style": {
+        "navigationBarTitleText": "apply"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  }
 }

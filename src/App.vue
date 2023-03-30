@@ -10,4 +10,12 @@ onHide(() => {
   console.log('App Hide')
 })
 </script>
-<style></style>
+<style>
+view,
+:before,
+:after {
+  border-radius: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+</style>
