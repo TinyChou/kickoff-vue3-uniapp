@@ -17,6 +17,7 @@ const list = [
   { name: 'space-x', path: '/pages/space' },
   { name: 'divide-x', path: '/pages/divide' },
   { name: 'apply', path: '/pages/apply' },
+  { name: 'uniui-test', path: '/pages/uni-ui/test' },
 ]
 const to = (to: string) => {
   uni.navigateTo({
