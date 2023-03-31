@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import App from './App.vue'
-import { mount } from '@vue/test-utils'
+// import App from './App.vue'
+// import { mount } from '@vue/test-utils'
 
 describe('1 + 1', () => {
   it('should =2', () => {
