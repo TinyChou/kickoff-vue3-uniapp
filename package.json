@@ -36,7 +36,11 @@
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && pnpm release:only",
+    "release:only": "changeset publish && git push --follow-tags"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-3070720230316001",
@@ -56,6 +60,7 @@
     "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@dcloudio/types": "^3.3.2",
     "@dcloudio/uni-automator": "3.0.0-alpha-3070720230316001",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3070720230316001",
