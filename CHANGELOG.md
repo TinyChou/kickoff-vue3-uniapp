@@ -1,5 +1,11 @@
 # uni-preset-vue
 
+## 0.0.4
+
+### Patch Changes
+
+- Modifying The Changelog Formats using `@changesets/changelog-git`
+
 ## 0.0.3
 
 ### Patch Changes
