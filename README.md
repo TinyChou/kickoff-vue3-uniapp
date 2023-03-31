@@ -1,3 +1,4 @@
+> 版本日志：[CHANGELOG.md](./CHANGELOG.md)
 ### 添加 `@dcloudio/uni-ui` 支持
 
 1. `sass` 依赖安装，因为使用 vite，所以不需要安装 `sass-loader`

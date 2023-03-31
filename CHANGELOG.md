@@ -1,4 +1,4 @@
-# uni-preset-vue
+# kickoff-vue3-uniapp
 
 ## 0.0.4
 

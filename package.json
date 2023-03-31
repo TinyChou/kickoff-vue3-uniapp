@@ -1,5 +1,5 @@
 {
-  "name": "uni-preset-vue",
+  "name": "kickoff-vue3-uniapp",
   "version": "0.0.4",
   "scripts": {
     "dev:app": "uni -p app",
