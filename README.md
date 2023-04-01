@@ -42,3 +42,53 @@ npx commitlint --from HEAD~1 --to HEAD --verbose
 git commit -m "foo: this will fail"
 git commit -m "chore: lint on commitmsg"
 ```
+
+### 平台条件编译
+
+> [条件编译支持 `#ifdef`, `#ifndef`, `%PLATFORM%`](https://zh.uniapp.dcloud.io/tutorial/platform.html#preprocessor).
+
+
+### UnoCSS 支持
+
+1. 安装 `unocss`, `@unocss/transformer-directives` 用于转换 combined atomic CSS properties.
+
+```shell
+pnpm i -D unocss @unocss/transformer-directives
+```
+
+2. 安装 uniapp 适配插件，禁掉 attributify 模式（消除小程序中部分内置组件，uni-ui 的 props 想冲突问题
+
+```shell
+pnpm i -D unocss-applet
+```
+
+最后，配置 `unocss.config.ts`:
+
+```ts
+import { defineConfig } from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
+
+import {
+  presetApplet,
+  transformerApplet,
+  // NOTE: DO NOT use uno attributify mode because of the conflicts
+  // with some `uni-ui` components props.
+  // transformerAttributify,
+} from 'unocss-applet'
+
+export default defineConfig({
+  presets: [
+    presetApplet(),
+  ],
+  transformers: [
+    // Use this transformer directives to combine atomic CSS properties.
+    // @see https://github.com/unocss/unocss/tree/main/packages/transformer-directives#css-variable-style
+    transformerDirectives({
+      applyVariable: ['--at-apply', '--uno-apply', '--uno'],
+    }),
+    // Don't change the following order
+    // transformerAttributify(),
+    transformerApplet(),
+  ],
+})
+```

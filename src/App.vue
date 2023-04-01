@@ -17,5 +17,6 @@ view,
   border-radius: 0;
   border-style: solid;
   border-color: #e5e7eb;
+  border-width: 0;
 }
 </style>

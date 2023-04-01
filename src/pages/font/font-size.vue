@@ -5,7 +5,7 @@
     <view class="text-sm"> text-sm </view>
     <view class="text-base"> text-base </view>
     <view class="text-lg"> text-lg </view>
-    <view class="text-40"> text-40 </view>
+    <view class="text-4"> text-4 </view>
     <view class="text-xl"> text-xl </view>
     <view class="text-2xl"> text-2xl </view>
     <view class="text-3xl"> text-3xl </view>
