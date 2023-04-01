@@ -119,7 +119,9 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+      "uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "ndj-(.*)": "@/components/ndj-$1.vue",
+      "biz-(.*)": "@/pages/components/biz-$1.vue"
     }
   }
 }

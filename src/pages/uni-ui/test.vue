@@ -13,6 +13,7 @@
     <uni-breadcrumb-item>首页</uni-breadcrumb-item>
     <uni-breadcrumb-item>首页</uni-breadcrumb-item>
   </uni-breadcrumb>
+  <biz-badge @change="handleChange">BIZ.</biz-badge>
 </template>
 <script setup lang="ts">
 import { useCounterStore } from '@/store/counter'
@@ -28,6 +29,8 @@ function bindClick() {
 const { x, y } = useMouse()
 const oX = computed(() => Math.round(x.value))
 const oY = computed(() => Math.round(y.value))
+
+const handleChange = () => console.log('changed')
 </script>
 <!-- <style scoped>
 
