@@ -17,6 +17,7 @@ const list = [
   { name: 'divide-x', path: '/pages/divide' },
   { name: 'apply', path: '/pages/apply' },
   { name: 'uniui-test', path: '/pages/uni-ui/test' },
+  { name: 'uni-app', path: '/pages/uni-app/index' },
 ]
 const to = (to: string) => {
   uni.navigateTo({
