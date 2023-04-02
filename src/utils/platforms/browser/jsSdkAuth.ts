@@ -1,4 +1,4 @@
-import { loadAndExecScript } from '@/platforms/browser/loadAndExecScript'
+import { loadAndExecScript } from './loadAndExecScript'
 
 declare global {
   interface Window {
@@ -7,7 +7,6 @@ declare global {
   }
 }
 
-// #ifdef H5
 function validateSdk(obj: any) {
   if (obj) return
   throw new Error('The JSSDK is invalid, validation failed!')
@@ -22,6 +21,7 @@ const H5_API_CONFIG_LARK = ''
 const H5_API_CONFIG_WECHAT = ''
 
 async function _jsSdkAuth(initial: boolean) {
+  // #ifdef H5
   // https://juejin.cn/post/7122744808023687182
   if (/Feishu TTWebView/.test(navigator.userAgent)) {
     // Mozilla/5.0 (Linux; Android 9; MI 6X Build/PKQ1.180904.001; wv) AppleWebKit/537.36 (KHTML, like Gecko)
@@ -78,8 +78,8 @@ async function _jsSdkAuth(initial: boolean) {
   } else {
     return true
   }
+  // #endif
 }
-// #endif
 
 type PromiseCallbackPair<T> = [(value: T | PromiseLike<T>) => void, (reason?: any) => void]
 const queue: PromiseCallbackPair<boolean>[] = []
