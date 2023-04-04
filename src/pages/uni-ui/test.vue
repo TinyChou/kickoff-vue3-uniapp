@@ -14,11 +14,13 @@
     <uni-breadcrumb-item>首页</uni-breadcrumb-item>
   </uni-breadcrumb>
   <biz-badge @change="handleChange">BIZ.</biz-badge>
+  <view v-for="(message, idx) of messagesToRender" :key="idx">{{ message }}</view>
 </template>
 <script setup lang="ts">
 import { useCounterStore } from '@/store/counter'
 import { useMouse } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, reactive } from 'vue'
+import { start, stop } from '@/utils/mock-socket'
 
 const counter = useCounterStore()
 function bindClick() {
@@ -31,6 +33,41 @@ const oX = computed(() => Math.round(x.value))
 const oY = computed(() => Math.round(y.value))
 
 const handleChange = () => console.log('changed')
+
+const cacheQueue: string[] = []
+const MAX_CACHE = 1000
+
+const messagesToRender: string[] = reactive([])
+const INTERVAL_MS = 300
+let intervalId: any
+
+function startConsume() {
+  stopConsume()
+
+  intervalId = setInterval(() => {
+    while (cacheQueue.length) {
+      messagesToRender.push(cacheQueue.shift()!)
+    }
+  }, INTERVAL_MS)
+}
+
+function stopConsume() {
+  if (intervalId) clearInterval(intervalId)
+  intervalId = undefined
+}
+
+onMounted(() => {
+  start((msg) => {
+    while (cacheQueue.length >= MAX_CACHE) cacheQueue.shift()
+    cacheQueue.push(msg)
+  })
+
+  startConsume()
+})
+onUnmounted(() => {
+  stopConsume()
+  stop()
+})
 </script>
 <!-- <style scoped>
 
